@@ -14,7 +14,6 @@ export default function UserInput({ addItem }) {
     addItem(newItem)
   }
 
-
   return (
     <form onSubmit={handleSubmit}>
         <input type="text" value={newItem} onChange={(e) => setNewItem(e.target.value)} placeholder="enter new item"/>

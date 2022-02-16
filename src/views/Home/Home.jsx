@@ -4,7 +4,9 @@ import ShoppingList from '../../components/ShoppingList/ShoppingList'
 import UserInput from '../../components/userInput/userInput'
 
 const initialItems = [
-  { id: 0, input: 'Egg' }
+  { id: 0, input: 'Egg' },
+  { id: 1, input: 'Cheeseburger' },
+  { id: 2, input: 'Banan' }
 ]
 
 const itemsReducer = (items, action) => {
@@ -41,7 +43,7 @@ export default function Home() {
     <>
     <div>Home</div>
     <UserInput addItem={handleAdd} />
-    <ShoppingList />
+    <ShoppingList items={items} />
     </>
   )
 }

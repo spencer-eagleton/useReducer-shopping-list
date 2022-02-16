@@ -1,6 +1,6 @@
 
-export default function ShoppingList() {
+export default function ShoppingList(items) {
   return (
-    <div>ShoppingList</div>
+    <><div>ShoppingList</div></>
   )
 }

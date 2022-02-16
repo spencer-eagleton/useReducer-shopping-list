@@ -1,9 +1,8 @@
 import { useState } from "react";
 
-export default function UserInput() {
+export default function UserInput({ addItem }) {
 
   const [newItem, setNewItem] = useState('');
-  const [items, setItems] = useState([])
   
 
 
@@ -12,10 +11,9 @@ export default function UserInput() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setNewItem('')
-    setItems([...items, newItem])
+    addItem(newItem)
   }
 
-  console.log(items);
 
   return (
     <form onSubmit={handleSubmit}>

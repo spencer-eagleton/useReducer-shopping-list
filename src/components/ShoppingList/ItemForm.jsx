@@ -1,8 +1,11 @@
 
-export default function ItemForm({item, setEditing, deleteItem}) {
+export default function ItemForm({item, setEditing, deleteItem, editItem}) {
+
+
+
   return (
     <>
-        <input placeholder={item.input} />
+        <input onChange={(e) => editItem({...item, input: e.target.value})} value={item.input} placeholder={item.input} />
         <button onClick={() => deleteItem(item.id)}>delete</button>
         <button onClick={() => setEditing(false)}>update</button>
     </>

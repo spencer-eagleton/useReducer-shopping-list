@@ -4,10 +4,6 @@ export default function UserInput({ addItem }) {
 
   const [newItem, setNewItem] = useState('');
   
-
-
-
-
   const handleSubmit = (e) => {
     e.preventDefault();
     setNewItem('')

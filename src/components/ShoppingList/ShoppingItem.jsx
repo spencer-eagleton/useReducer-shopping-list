@@ -6,9 +6,7 @@ export default function ShoppingItem({item, editItem, deleteItem}) {
     const [editing, setEditing] = useState(false)
 if (editing) {
     return (
-        <>
-        <ItemForm item={item} setEditing={setEditing} deleteItem={deleteItem} />
-        </>
+        <ItemForm item={item} editItem={editItem} setEditing={setEditing} deleteItem={deleteItem} />
     )
 } else {
     return (

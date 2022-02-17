@@ -6,8 +6,7 @@ export default function ShoppingList({items, deleteItem, editItem}) {
       <ul>
     {items.map((item) => (
       <li key={item.id}>
-
-        <ShoppingItem item={item} deleteItem={deleteItem} />
+        <ShoppingItem item={item} editItem={editItem} deleteItem={deleteItem} />
       </li>
     ))}
       </ul>

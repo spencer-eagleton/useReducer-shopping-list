@@ -23,6 +23,14 @@ const itemsReducer = (items, action) => {
     case 'delete': {
       return items.filter((item) => item.id !== action.id)
     }
+    case 'edit': {
+      return items.map((item) => {
+        if (item.id === action.task.id) {
+          return action.task
+        }
+        return item
+      })
+    }
   
     default: {
       throw Error(`${action.type} is not recognized`)
@@ -47,10 +55,10 @@ export default function Home() {
       id: itemID,
     })
   }
-  const handleEdit = (item) => {
+  const handleEdit = (task) => {
     dispatch({
       type: 'edit',
-      item,
+      task,
     })
   }
   return (

@@ -2,16 +2,16 @@
 
 export default function ItemCard({item, deleteItem, setEditing}) {
     
-        return (
+    return (
       
           
           
-          <>
-          <p>{item.input}</p>
+        <>
+          <span>{item.input}</span>
           <button onClick={() => deleteItem(item.id)}>delete</button>
           <button onClick={() => setEditing(true)}>edit</button>
-          </>
+        </>
       
-        )
+    )
 
 }

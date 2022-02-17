@@ -55,3 +55,23 @@ test('user can edit an item', () => {
     expect(postEditItem).toBeInTheDocument()
 
 })
+
+test('user can delete an item', () => {
+    render(
+        <App />
+    )
+
+    const delButton = screen.getByRole('button', {
+        name: /delete cheeseburger/i
+      })
+    expect(delButton).toBeInTheDocument();
+
+    const item = screen.getByText(/cheeseburger/i)
+    expect(item).toBeInTheDocument()
+
+    userEvent.click(delButton)
+
+    expect(item).not.toBeInTheDocument();
+
+    
+})

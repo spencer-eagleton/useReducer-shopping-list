@@ -41,7 +41,6 @@ export default function Home() {
 
   return (
     <>
-    <div>Home</div>
     <UserInput addItem={handleAdd} />
     <ShoppingList items={items} />
     </>

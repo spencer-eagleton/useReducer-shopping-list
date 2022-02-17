@@ -7,21 +7,12 @@ export default function ShoppingItem({item, editItem}) {
 if (editing) {
     return (
         <>
-        
-        <ItemForm item={item}/>
+        <ItemForm item={item} setEditing={setEditing} />
         </>
     )
 } else {
-
     return (
-      <>
-          
-          
-  
-          <ItemCard item={item} editItem={editItem} setEditing={setEditing} />
-          
-      </>
+        <ItemCard item={item} editItem={editItem} setEditing={setEditing} />
     )
   }
-
 }

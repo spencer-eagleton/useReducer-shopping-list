@@ -1,10 +1,10 @@
 
-export default function ItemForm({item}) {
+export default function ItemForm({item, setEditing}) {
   return (
     <>
         <input placeholder={item.input}></input>
         <button>delete</button>
-        <button>update</button>
+        <button onClick={() => setEditing(false)}>update</button>
     </>
   )
 }

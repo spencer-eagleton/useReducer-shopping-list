@@ -1,4 +1,4 @@
-import ShoppingItem from "./ShoppingItem";
+import ItemCard from "./ItemCard";
 
 export default function ShoppingList({items, deleteItem, editItem}) {
   return (
@@ -7,7 +7,7 @@ export default function ShoppingList({items, deleteItem, editItem}) {
     {items.map((item) => (
       <li key={item.id}>
 
-        <ShoppingItem item={item} deleteItem={deleteItem} editItem={editItem} />
+        <ItemCard item={item} deleteItem={deleteItem} />
       </li>
     ))}
       </ul>

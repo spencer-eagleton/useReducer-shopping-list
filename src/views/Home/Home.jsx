@@ -12,7 +12,6 @@ const initialItems = [
 const itemsReducer = (items, action) => {
   switch (action.type) {
     case 'add': {
-      console.log(items);
       return [
         ...items, 
         {
@@ -20,6 +19,9 @@ const itemsReducer = (items, action) => {
           input: action.input
         }
       ]
+    }
+    case 'delete': {
+      return items.filter((item) => item.id !== action.id)
     }
     default: {
       throw Error(`${action.type} is not recognized`)
@@ -38,11 +40,16 @@ export default function Home() {
       input,
     })
   }
-
+  const handleDelete = (itemID) => {
+    dispatch({
+      type: 'delete',
+      id: itemID,
+    })
+  }
   return (
     <>
     <UserInput addItem={handleAdd} />
-    <ShoppingList items={items} />
+    <ShoppingList items={items} deleteItem={handleDelete}/>
     </>
   )
 }

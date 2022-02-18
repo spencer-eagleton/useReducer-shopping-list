@@ -30,7 +30,7 @@ const itemsReducer = (items, action) => {
         })
       }
       case 'clear': {
-        return items = ([]);
+        return items = [];
       }
     
       default: {

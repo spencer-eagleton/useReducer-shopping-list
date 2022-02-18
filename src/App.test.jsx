@@ -75,3 +75,19 @@ test('user can delete an item', () => {
 
     
 })
+
+test('renders a list of 3 items and user can clear the ', () => {
+    render(
+        <App />
+    )
+    
+    const list = screen.getAllByRole("listitem")
+    expect(list.length).toBe(3)
+    
+    const clearButton = screen.getByRole('button', {
+        name: /clear list/i
+      })
+    userEvent.click(clearButton)
+
+    expect(screen.queryAllByRole('listitem')).toHaveLength(0);
+})

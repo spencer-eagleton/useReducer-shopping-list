@@ -1,10 +1,14 @@
+import { useItems } from "../../context/ItemContext"
 
-export default function ItemForm({item}) {
+export default function ItemForm({item, setEditing}) {
+
+const { handleDelete, handleEdit } = useItems();
+
   return (
     <>
-        <input placeholder={item.input}></input>
-        <button>delete</button>
-        <button>update</button>
+        <input aria-label={`${item.input} input`} onChange={(e) => handleEdit({...item, input: e.target.value})} value={item.input} placeholder={item.input} />
+        <button onClick={() => handleDelete(item.id)}>delete</button>
+        <button onClick={() => setEditing(false)}>update</button>
     </>
   )
 }

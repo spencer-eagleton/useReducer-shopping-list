@@ -29,6 +29,9 @@ const itemsReducer = (items, action) => {
           return item
         })
       }
+      case 'clear': {
+        return items = ([]);
+      }
     
       default: {
         throw Error(`${action.type} is not recognized`)
@@ -61,9 +64,16 @@ const ItemProvider = ({ children }) => {
       })
     }
 
+    const handleClear = (items) => {
+      dispatch({
+        type: 'clear',
+        items
+      })
+    }
+
     return (
         <ItemContext.Provider
-            value={{items, handleAdd, handleDelete, handleEdit}}
+            value={{items, handleAdd, handleDelete, handleEdit, handleClear}}
         >
             {children}
         </ItemContext.Provider>

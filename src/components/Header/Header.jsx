@@ -3,7 +3,7 @@ import UserInput from '../../components/UserInput/UserInput'
 import './Header.css'
 
 export default function Header() {
-    const { items } = useItems();
+    const { items, handleClear } = useItems();
   return (
     <div className="header">
       <div className="items-left">
@@ -16,6 +16,9 @@ export default function Header() {
       </div>
       
       <UserInput />
+      <button onClick={handleClear}>
+        clear list
+      </button>
     </div>
   )
 }

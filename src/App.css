@@ -2,14 +2,29 @@
 
 
 * {
-    background: gray;
     font-family: 'Quicksand', sans-serif;
 }
 
+body {
+    background-image: url(./assets/background2.jpg);
+    background-size: cover;
+
+}
+
+
+
 .home {
+    min-height: 500px;
+    color: beige;
+    backdrop-filter: blur(5px);
+    background-color: rgba(37, 37, 37, 0.082);
+    border-radius: 5px;
     margin: 100px;
     display: flex;
-    justify-content: center
+    justify-content: center;
+    align-items: center
+    
+    
     
 
     
@@ -21,9 +36,12 @@
 }
 
 ul {
+    overflow-y: scroll;
     list-style-type: none;
     display: flex;
     flex-direction: column;
-    justify-content: center
+    justify-content: center;
+    align-items: center
+
     
 }

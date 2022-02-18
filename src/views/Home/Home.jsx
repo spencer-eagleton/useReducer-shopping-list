@@ -1,7 +1,7 @@
 import { useReducer } from 'react'
 
 import ShoppingList from '../../components/ShoppingList/ShoppingList'
-import UserInput from '../../components/userInput/userInput'
+import UserInput from '../../components/UserInput/UserInput'
 
 const initialItems = [
   { id: 0, input: 'Egg' },
